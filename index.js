@@ -40,7 +40,7 @@ console.log(pi);
 function submit() {
     var x = 10;
 
-    if(true) {
+    if (true) {
         let y = 20;
         console.log(x)
     }
@@ -88,14 +88,14 @@ const obj = {
     age: 20
 };
 let number = 10.5;
-const arr = [1, 2, 3, 4, 'hung', true, null, undefined, {name: 'hung'}];
+const arr = [1, 2, 3, 4, 'hung', true, null, undefined, { name: 'hung' }];
 console.log(typeof number)
 
 
 
-let num1 = 10;  
-let num2 = 7; 
-let num3 = 5; 
+let num1 = 10;
+let num2 = 7;
+let num3 = 5;
 
 //1. Toán tử so sánh: >, <, >=, <=, ==, ===, !=, !==
 // == so sánh giá trị
@@ -153,29 +153,77 @@ console.log(new Date().getDay())
 // if (new Date().getDay() == 0) {
 //     console.log('Chủ nhật');
 // }
-switch(new Date().getDay()) {
-    case 0:
-        console.log('Chủ nhật');
-        break;
-    case 1:
-        console.log('Thứ hai');
-        break;
-    case 2:
-        console.log('Thứ ba');
-        break;
-    case 3: 
-        console.log('Thứ tư');
-        break;
-    case 4:
-        console.log('Thứ năm');
-        break;
-    case 5:
-        console.log('Thứ sáu');
-        break;
-    case 6:
-        console.log('Thứ bảy');
-        break;
-    default: 
-        console.log('Không xác định');
-        break;
+// switch(new Date().getDay()) {
+//     case 0:
+//         console.log('Chủ nhật');
+//         break;
+//     case 1:
+//         console.log('Thứ hai');
+//         break;
+//     case 2:
+//         console.log('Thứ ba');
+//         break;
+//     case 3: 
+//         console.log('Thứ tư');
+//         break;
+//     case 4:
+//         console.log('Thứ năm');
+//         break;
+//     case 5:
+//         console.log('Thứ sáu');
+//         break;
+//     case 6:
+//         console.log('Thứ bảy');
+//         break;
+//     default: 
+//         console.log('Không xác định');
+//         break;
+// }
+
+// var time = new Date().getHours();
+// console.log (new Date().getHours());
+
+// switch (true) {
+//         case (time < 10):
+//                 alert('Good morning');
+//                 break;
+//         case (time < 20):
+//                 alert('Good day');
+//                 break;
+//         case (time > 20):
+//                 alert('Giờ không hợp lệ');
+//                 break;
+//         default:
+//                 alert('Giờ không hợp lệ');
+// }
+
+
+//Vòng lặp trong JS
+//1. for
+
+// for (var i = 0; i <= 100; i++) {
+//     if (i % 2 == 0) {
+//         console.log(i);
+//     }
+// }   
+
+// var i = 5;
+// for (var i = 0; i < 10; i+=2) {
+//   // some statements
+//   console.log("i trong vòng lặp: " + i);
+// }
+// document.getElementById("demo").innerHTML = i;
+
+var i = 0;
+while(i < 10) {
+    console.log(i);
+    i++;
 }
+let positiveNum = Number(prompt('Nhập vào 1 số dương để tính tổng: '));
+
+let sum = 0;
+while(positiveNum > 0) {
+    sum += positiveNum
+    positiveNum = Number(prompt('Nhập vào 1 số dương để tính tổng, kết thúc bằng cách nhập số <=0 : '));
+}
+console.log("Tổng số dương lớn hơn 0: ", sum)
