@@ -215,16 +215,88 @@ console.log(new Date().getDay())
 // }
 // document.getElementById("demo").innerHTML = i;
 
-var i = 0;
-while(i < 10) {
-    console.log(i);
-    i++;
-}
-let positiveNum = Number(prompt('Nhập vào 1 số dương để tính tổng: '));
+// var i = 0;
+// while(i < 10) {
+//     console.log(i);
+//     i++;
+// }
+// let positiveNum = Number(prompt('Nhập vào 1 số dương để tính tổng: '));
 
-let sum = 0;
-while(positiveNum > 0) {
-    sum += positiveNum
-    positiveNum = Number(prompt('Nhập vào 1 số dương để tính tổng, kết thúc bằng cách nhập số <=0 : '));
+// let sum = 0;
+// while(positiveNum > 0) {
+//     sum += positiveNum
+//     positiveNum = Number(prompt('Nhập vào 1 số dương để tính tổng, kết thúc bằng cách nhập số <=0 : '));
+// }
+// console.log("Tổng số dương lớn hơn 0: ", sum)
+
+//Array
+const fruits = ['Apple', 'Banana', 'Orange', 'Mango'];
+console.log("độ dài mảng fruits: ", fruits.length);
+// fruits = [1,2,3,4,5,6];
+// console.log("mảng fruits: ", fruits);
+
+fruits[1] = 'Water melon';
+console.log('phan tu thu 2 cua fruits: ', fruits[1])
+
+//Primitive (tham tri: number, string, boolean, null, undefined, symbol) and Non-primitive (tham chieu: object, array, function)
+const a1 = 10;
+const a2 = 10;
+console.log(a1 == a2);
+
+const arr1 = [1,2,3];
+const arr2 = [1,2,3];
+console.log(arr1 == arr2);
+
+const data = [1,2,3]
+const numbers = data;
+numbers[0] = 10;
+console.log("mang numbers: ", numbers);
+console.log("mang data sau khi thay doi", data)
+
+// const arr3 = [1,4,9,16]
+// const arr4 = arr3.map(function (x) {
+//     return x * 2
+// });
+//arrow function
+// const arr4 = arr3.map(x => x * 2);
+
+// for (let i = 0; i < arr3.length; i++) {
+//     arr3[i] = arr3[i] * 2
+// }
+// console.log("arr4: ", arr4)
+
+//CRUD
+//dùng push: thêm phần tử vào cuối mảng, trả về chiều dài mảng
+const data1 = [1,2,3]
+data1.push(4)
+console.log("mang data1: ", data1);
+
+//unshift(): thêm phần tử đầu mảng
+const data2 = [1,2,3]
+data2.unshift(0)
+console.log("mang data2: ", data2);
+
+//splice(): thêm phần tử vào vị trí bất kì của mảng
+// const data3 = [1,2,3]
+// data3.splice(0,0,4)
+// console.log("mang data3: ", data3);
+
+// const months = ['Jan', 'March', 'April', {name: 'Hung'}];
+// months.splice(1,0,'Feb');
+//splice(): trả về mảng đã mới đã chỉnh sửa
+
+//pop(): trả về phần tử cuối cùng của mảng
+// console.log(months.pop());
+
+const fruits1 = ['apple', 'banana', 'coconut'];
+// fruits1.pop();
+
+console.log(fruits1.pop());
+
+for(let i = 0; i < 10; i++) {
+    if(i === 7) {
+        continue;
+    }
+    console.log(i);
 }
-console.log("Tổng số dương lớn hơn 0: ", sum)
+console.log("Thực hiện xong việc lặp")
