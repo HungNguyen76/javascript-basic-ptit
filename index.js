@@ -373,3 +373,63 @@ console.log(personName)
 //   console.log("Form da duoc submit voi gia tri cua expression function: ", param1, param2)
 // }
 // submitForm1(3,4)
+
+
+//arrow function => hàm mũi tên 
+// function count(x) {
+//   // console.log(x)
+//   if(x % 2 === 0) { 
+//     return x * 2
+//   }
+
+// }
+// (x) => {
+//   if(x % 2 === 0) { 
+//     return x * 2
+//   }
+// }
+
+//IIFE: Immediately Invoked Function Expression
+// (function (a, b) {
+//   return a + b + 100;
+// });
+
+// //Arrow function
+// (a, b) => a + b + 100
+
+//map: trả về mảng mới sau khi thực hiện hàm
+const arr1 = [1,2,3,4,5,6,7,8,9,10]
+const res = arr1.map(num => num * 2)
+// const res = function double(num) {
+//   for (let i = 0; i < num.length; i++) {
+//     num[i] = num[i] * 2
+//   }
+//   return num
+// }
+console.log("arr1 sau khi double: ", res)
+
+const arr2 = [1, 30, 4, 21, 100000]
+const months = ['March', 'Jan', 'Feb', 'Dec']
+arr2.sort((a, b) => b - a)
+arr2.reverse()
+arr2.shift()
+months.sort()
+// console.log("arr2 sau khi sort: ", arr2)
+// console.log("months sau khi sort: ", months)
+
+
+//Slice
+const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+console.log(animals.slice(2)) //['camel', 'duck', 'elephant']
+console.log(animals.slice(2, 4)) // ['camel', 'duck']
+console.log(animals.slice(1, 5)) // ['bison', 'camel', 'duck', 'elephant']
+console.log(animals.slice(-2))//['duck', 'elephant']
+console.log(animals.slice(-2, -1))//['duck']
+console.log(animals.slice(2, -1));//['camel', 'duck']
+console.log(animals.slice()); //['ant', 'bison', 'camel', 'duck', 'elephant']
+
+
+// const count = animals.push('cows')
+animals.push('chickens', 'cats', 'dogs');
+// console.log(count); 
+console.log(animals)
