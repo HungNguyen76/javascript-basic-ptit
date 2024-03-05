@@ -92,90 +92,148 @@ const arr = [1, 2, 3, 4, 'hung', true, null, undefined, {name: 'hung'}];
 console.log(typeof number)
 
 
-
-let num1 = 10;  
-let num2 = 7; 
-let num3 = 5; 
-
-//1. Toán tử so sánh: >, <, >=, <=, ==, ===, !=, !==
-// == so sánh giá trị
-console.log(num1 == num2); //true
-// === so sánh giá trị và kiểu dữ liệu
-console.log(num1 === num2); //false
-console.log(num1 != num2); //false
-console.log(num1 < num2 && num2 > num3); //false
-console.log(num1 < num2 || num2 > num3); //true
-console.log(!(num1 < num2));
-console.log(num1 > num2 ? num2 : num1);
+// const count = animals.push('cows')
+animals.push('chickens', 'cats', 'dogs');
+// console.log(count); 
+console.log(animals)
 
 
-
-//Toán tử trong JS
-//2. Toán tử số học: +, -, *, /, %, ++, --
-// console.log(num1 + num2); //13
-// console.log(num1 - num2); //7
-// console.log(num1 * num2); //30
-// console.log(num1 / num2); //3.3333333333333335
-// console.log(num1 % num3); //3.3333333333333335
-// console.log(num1++); //10
-// console.log(--num1); //11
-// num1 += 5;
-// console.log(num1); //11
-
-
-// const num4 = Number(prompt("Nhập một số bất kì: "));
-//toán tử 3 ngôi
-// console.log(num4 % 2 == 0 ? 'Số chẵn' : 'Số lẻ');
-
-// if(num4 % 2 == 0) {
-//     console.log('Số chẵn');
-// } else {
-//     console.log('Số lẻ');
-// }
-
-// Cho phép người dùng nhập vào số điểm lấy từ prompt bàn phím
-//Giỏi: Điểm >= 8 
-//Khá: 8 > điểm >= 7
-//Trung bình: 7 > điểm >= 5
-//Yếu: điểm < 5
-
-// const mark = Number(prompt('Nhập điểm của bạn: '));
-// if(mark >= 8) {
-//     alert('Giỏi');
-// } else if(mark >= 7) {
-//     alert('Khá');
-// } else if(mark >= 5) {
-//     alert('Trung bình');    
-// } else {
-//     alert('Yếu');
-// }
-console.log(new Date().getDay())
-// if (new Date().getDay() == 0) {
-//     console.log('Chủ nhật');
-// }
-switch(new Date().getDay()) {
-    case 0:
-        console.log('Chủ nhật');
-        break;
-    case 1:
-        console.log('Thứ hai');
-        break;
-    case 2:
-        console.log('Thứ ba');
-        break;
-    case 3: 
-        console.log('Thứ tư');
-        break;
-    case 4:
-        console.log('Thứ năm');
-        break;
-    case 5:
-        console.log('Thứ sáu');
-        break;
-    case 6:
-        console.log('Thứ bảy');
-        break;
-    default: 
-        console.log('Không xác định');
-        break;
+// Hàm kiểm tra xem ba số có tạo thành một tam giác không
+function isTriangle(a, b, c) {
+  return a + b > c;
 }
+
+// Hàm đếm số lượng tam giác có thể tạo từ mảng
+function countTriangles(arr) {
+  let count = 0;
+  let triangles = [];
+  // Sắp xếp mảng
+  arr.sort((a, b) => a - b);
+
+  for (let i = 0; i < arr.length - 2; i++) {
+      let k = i + 2;
+      for (let j = i + 1; j < arr.length; j++) {
+          while (k < arr.length && isTriangle(arr[i], arr[j], arr[k])) {
+              triangles.push([arr[i], arr[j], arr[k]]);
+              k++;
+          }
+          if (k > j) {
+              count += k - j - 1;
+          }
+      }
+  }
+
+  return {count, triangles};
+}
+
+// function main() {
+//   let arr = prompt("Nhập vào một mảng số nguyên dương, cách nhau bởi dấu phẩy: ").split(",").map(Number);
+//   let result = countTriangles(arr);
+
+//   console.log("Số lượng tam giác có thể tạo: ", result.count);
+//   console.log("Các tam giác có thể tạo: ", result.triangles);
+// }
+
+// main();
+
+//object literals
+const obj1 = {
+  //property
+  name: "Nguyen Minh Hung",
+  age: 18,
+  //method
+  sayHi: function() {
+    return `Hello, my name is ${this.name}`
+  }
+}
+console.log(obj1.sayHi())
+console.log(obj1['age'])
+
+obj1.name = "Alice"
+obj1.gender = "Male"
+// delete obj.name
+const keys = Object.keys(obj1)
+console.log(keys)
+
+const target = {}
+const source1 = { a: 1}
+const source2 = { b: 2}
+const source3 = { c: 3}
+Object.assign(source1, source2, source3)
+
+console.log(source1)
+
+const animal = {
+  type:"Chicken",
+  sound: "Help me!!!!",
+  get makeSound() {
+    return this.type + " barks " + this.sound + "on fireee"
+  }
+}
+console.log(animal.makeSound)//Chicken barks Help me!!!!on fireee
+
+const dog = Object.create(animal)
+dog.type = "Dog"
+dog.sound = "Gâu gâu"
+// dog.makeSound()
+console.log(dog)
+
+
+const person = {
+  firstName: "Hung",
+  lastName: "Nguyen",
+  set fullName(name) {
+    const parts = name.split(" ");
+    this.firstName = parts[0];
+    this.lastName = parts[1];
+  }
+}
+person.fullName = "Duc Duy"//["Duc", "Duy]
+console.log(person.firstName)
+console.log(person.lastName)
+
+const car = {
+  make: "BMW",
+  model: "I8",
+  year: 2024,
+  color: "White"
+}
+// console.log(car['make'])
+for (let key in car) {
+  console.log(key + ": " + car[key])
+}
+
+//tạo object với đối tượng Object
+// const student = new Object()
+// student.name = "Rikkei Academy"
+// student.age = 1
+// student.sayHi = function() {
+//   return `Hello, my name is ${this.name}`
+// }
+// console.log(student)
+
+
+// //tạo object với Object Constructor functions
+// function Person(lastName, firstName) {
+//   this.firstName = firstName;
+//   this.lastName = lastName;
+//   this.study = function() {
+//     return `${this.firstName} is studying`
+//   }
+// }
+// const teacher = new Person("Nguyen", "Minh Hung")
+// console.log(teacher)
+
+// //tạo object từ class
+// class Student{
+//   constructor(name, age){
+//     this.name = name
+//     this.age = age
+//   }
+//   sayHi() {
+//     return `Xin chào học viên` + this.name
+//   }
+// }
+
+// const student1 = new Student("TA", 20)
+// console.log(student1)
