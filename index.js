@@ -179,3 +179,71 @@ switch(new Date().getDay()) {
         console.log('Không xác định');
         break;
 }
+
+class Animal {
+  constructor(name, species) {
+    this.name = name
+    this.species = species
+  }
+
+  introduce() {
+    console.log(`I am a ${this.species} named ${this.name}`)
+  }
+}
+//Tạo ra đối tượng từ lớp Animal
+const cat = new Animal('Jerry', 'cat')
+
+//Gọi phương thức introduce để hiển thị thông tin về đối tương
+console.log(cat.introduce())
+
+//Getter, Setter
+class Person {
+  // constructor(firstName, lastName) {
+  //   this.firstName = firstName
+  //   this.lastName = lastName
+  // }
+  constructor(name) {
+    this._name = name;
+  }
+
+  // get fullName() {
+  //   return `My name is ${this.lastName} ${this.firstName}`
+  // }
+
+  //Setter đặt tên
+  set name(value) {
+    this._name = value
+  }
+  //Getter để lấy tên
+  get name() {
+    return this._name
+  }
+
+}
+
+// const man = new Person("Minh Hung", "Nguyen")
+//Tạo 1 đối tượng từ lớp Person
+const man = new Person("Alice")
+//Sử dụng setter để đặt tên mới
+man.name = "Bob"
+console.log(`My name is: ${man.name}`)
+// console.log(man.fullName)
+
+//Kế thừa - Inheritance
+class Parent {
+    constructor(name) {
+      this.name = name
+    }
+    sayHello() {
+      console.log(`Xin chao, toi la ${this.name}.`)
+    }
+}
+
+class Child extends Parent {
+  constructor(name, age) {
+    super(name) //Gọi constructor của lớp cha và truyền tham số 'name'
+    this.age = age
+  }
+}
+const child = new Child('Kha', 5)
+child.sayHello()
