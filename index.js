@@ -291,3 +291,51 @@ function addElement() {
   document.body.insertBefore(newDiv, currentDiv);
 }
 addElement()
+
+
+// function myFunction() {
+//   const list = document.getElementById("myDIV").classList;
+//   list.add("myStyle")
+// }
+
+// function myRemove() {
+//   const list = document.getElementById("myDIV").classList;
+//   list.remove("myStyle")
+// }
+// function myToggle() {
+//   const list = document.getElementById("myDIV").classList;
+//   list.toggle("myStyle")
+// }
+// function myContains() {
+//   const list = document.getElementById("myDIV").classList;
+//   const check =  list.contains("myStyle")
+//   console.log(check)
+// }
+
+
+
+// let btnEl = document.getElementById('btn')
+// // btnEl.addEventListener("click", (event) => {
+// //   console.log(event)
+// // })
+
+// function bigImg(x) {
+//   x.style.height = "64px";
+//   x.style.width = "64px";
+// }
+
+// function normalImg(x) {
+//   x.style.height = "32px";
+//   x.style.width = "32px";
+// }
+
+// function myFunction() {
+//   document.addEventListener("onscroll", (event) => {
+//     console.log("Key pressed: " + event.key)
+//   })
+// }
+
+let x = 0;
+function myFunction() {
+  document.getElementById("demo").innerHTML = x += 1;
+}

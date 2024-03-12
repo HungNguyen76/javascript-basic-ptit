@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>M13- HTML CSS Javascript</title>
-</head>
+    <style>
+      .myStyle {
+        background-color: coral;
+        padding: 16px;
+      }
+      div {
+  border: 1px solid black;
+  width: 200px;
+  height: 100px;
+  overflow: scroll;
+}
+    </style>
+  </head>
 
-<body>
-
-
+  <>
     <!-- <h1>Module 13 - Javascript Decision making</h1>
     <button onclick="alert('Xin chao! Thay Hung ne')"">Alert</button>
    <p id="p1" class="p1">Click me!!</p>
@@ -29,12 +38,38 @@
         <span id="child1">child1</span>
     </div>
   </div> -->
-  
+
     <div id="div1">The text above has been created dynamically.</div>
 
+    <!-- <button onclick="myFunction()">Add</button>
+    <button onclick="myRemove()">Remove</button>
+    <button onclick="myToggle()">Toggle</button>
+    <button onclick="myContains()">Check class</button> -->
+
+    <button id="btn">Click me!!!</button>
+
+    <br />
+    <img
+        onkeydown="bigImg(this)"
+      onmouseup="normalImg(this)"
+      border="0"
+      src="img/smiley.gif"
+      alt="Smiley"
+      width="32"
+      height="32"
+    />
+    <input type="text" oninput="myFunction(event)">
+
+    <div onscroll="myFunction()">In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since.
+        <br><br>
+        'Whenever you feel like criticizing anyone,' he told me, just remember that all the people in this world haven't had the advantages that you've had.'</div>
+        <p>Scrolled <span id="demo">0</span> times.</p>
+    
+        <!-- <p id="demo"></p> -->
+    <!-- <div id="myDIV">
+        <p>I am a myDIV</p>
+    </div> -->
 
     <script src="/index.js"></script>
-
-</body>
-
+  </body>
 </html>
