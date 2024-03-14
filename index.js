@@ -149,33 +149,66 @@ console.log(num1 > num2 ? num2 : num1);
 // } else {
 //     alert('Yếu');
 // }
-console.log(new Date().getDay())
-// if (new Date().getDay() == 0) {
-//     console.log('Chủ nhật');
-// }
-switch(new Date().getDay()) {
-    case 0:
-        console.log('Chủ nhật');
-        break;
-    case 1:
-        console.log('Thứ hai');
-        break;
-    case 2:
-        console.log('Thứ ba');
-        break;
-    case 3: 
-        console.log('Thứ tư');
-        break;
-    case 4:
-        console.log('Thứ năm');
-        break;
-    case 5:
-        console.log('Thứ sáu');
-        break;
-    case 6:
-        console.log('Thứ bảy');
-        break;
-    default: 
-        console.log('Không xác định');
-        break;
+
+let x = 0;
+function myFunction() {
+  document.getElementById("demo").innerHTML = x += 1;
 }
+
+function setCookie(cname, cvalue, exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  var expires = "expires=" + d.toUTCString();
+  document.cookie = cname + "=" + cvalue + "; " + expires;
+}
+
+// Hàm lấy Cookie
+function getCookie(cname) {
+  var name = cname + "=";
+  var ca = document.cookie.split(';');
+  for (var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') c = c.substring(1);
+    if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+  }
+  return "";
+}
+
+
+localStorage.setItem("jobs", "teacher")
+localStorage.setItem("name", "Minh Hung")
+localStorage.setItem("gender", "male")
+
+const jobs = localStorage.getItem("jobs")
+console.log("jobs from local: ", jobs)
+
+// localStorage.removeItem("jobs")
+localStorage.clear()
+
+const obj = { name: "John", age: 25 } //Js object
+//stringify: đổi đối tượng javascript thành chuỗi
+localStorage.setItem("users", JSON.stringify(obj))
+sessionStorage.setItem("users", JSON.stringify(obj))
+
+//Lấy đôi tượng từ local storage
+//parse: đổi chuỗi từ local storage thành đối tượng javascript
+const storedUser = JSON.parse(localStorage.getItem("users"))
+console.log("storedUser: ", storedUser)
+
+
+document.cookie = "username=Minh Hung; expires=Thu, 28 Jan 2025 12:00:00 UTC;path=/";
+const cookies = document.cookie;
+console.log("cookies: ", cookies)
+// function getCookie(name) {
+//   const cookieArray = document.cookie.split(";");
+//   for (let i = 0; i < cookieArray.length; i++) {
+//     const cookie = cookieArray[i].trim();
+//     if (cookie.startsWith(name + "=")) {
+//       return cookie.substring(name.length + 1);
+//     }
+//   }
+//   return null;
+// }
+
+// const username = getCookie("username");
+// console.log("username: ", username)
